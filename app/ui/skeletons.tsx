@@ -18,16 +18,16 @@ export function CardSkeleton() {
   );
 }
 
-export function CardsSkeleton() {
-  return (
-    <>
-      <CardSkeleton />
-      <CardSkeleton />
-      <CardSkeleton />
-      <CardSkeleton />
-    </>
-  );
-}
+// export function CardsSkeleton() {
+//   return (
+//     <>
+//       <CardSkeleton />
+//       <CardSkeleton />
+//       <CardSkeleton />
+//       <CardSkeleton />
+//     </>
+//   );
+// }
 
 export function RevenueChartSkeleton() {
   return (
