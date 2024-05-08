@@ -24,7 +24,8 @@ export default function Page() {
             , brought to you by Vercel.
           </p>
           <Link
-            href="/login"
+            // href="/login" // uncomment when it's time to add login functionality
+            href="/dashboard"
             className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
           >
             <span>Log in</span> <ArrowRightIcon className="w-5 md:w-6" />
@@ -35,6 +36,7 @@ export default function Page() {
             src="/hero-desktop.png"
             width={1000}
             height={760}
+            priority
             className="hidden md:block"
             alt="Screenshots of the dashboard project showing desktop version"
           />
@@ -42,6 +44,7 @@ export default function Page() {
             src="/hero-mobile.png"
             width={560}
             height={620}
+            priority
             className="block md:hidden"
             alt="Screenshots of the dashboard project showing mobile version"
           />
