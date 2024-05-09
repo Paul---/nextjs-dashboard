@@ -35,7 +35,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
   };
 
   return (
-    <>
+    <div className="flex flex-1 flex-shrink-0">
       <div className="relative flex flex-1 flex-shrink-0">
         <label htmlFor="search" className="sr-only">
           Search
@@ -49,12 +49,12 @@ export default function Search({ placeholder }: { placeholder: string }) {
         />
         <MagnifyingGlassIcon className="absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
       </div>
-      <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
+      <div className="ml-5">
         <ClearSearchBtn
           buttonName="Clear Search..."
           clickFunction={clearSearch}
         />
       </div>
-    </>
+    </div>
   );
 }
