@@ -22,9 +22,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
 
   const handleChange = ({
     target: { value },
-  }: {
-    target: { value: string };
-  }) => {
+  }: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(value);
     if (value) {
       params.set('query', value);
