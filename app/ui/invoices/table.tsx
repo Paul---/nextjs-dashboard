@@ -118,9 +118,9 @@ export default async function InvoicesTable({
                 ))
               ) : (
                 <tr>
-                  <p>
+                  <td className="py-2 pl-3 pr-3">
                     There are no invoices that match your search parameters.
-                  </p>
+                  </td>
                 </tr>
               )}
             </tbody>
