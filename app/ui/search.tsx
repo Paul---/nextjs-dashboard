@@ -1,9 +1,9 @@
 'use client';
 
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
-import { useSearchParams, usePathname, useRouter } from 'next/navigation';
-import { ClearSearchBtn } from './ClearSearchBtn';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
+import { ClearSearchBtn } from './ClearSearchBtn';
 
 export default function Search({ placeholder }: { placeholder: string }) {
   const searchParams = useSearchParams();
@@ -11,7 +11,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
   const { replace } = useRouter();
   const params = new URLSearchParams(searchParams);
   const [searchValue, setSearchValue] = useState(
-    `${params.toString().replace('query=', '')}`,
+    `${params.toString().replace(/page=\d/, "").replace('query=', '')}`,
   );
 
   const clearSearch = () => {
@@ -24,6 +24,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
     target: { value },
   }: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(value);
+    params.set('page', '1');
     if (value) {
       params.set('query', value);
       replace(`${pathname}?${params.toString()}`);
